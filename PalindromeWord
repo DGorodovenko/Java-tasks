@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+
+public class PalindromeWord {
+
+    public static void main(String[] args) {
+
+        Scanner sc=new Scanner(System.in);
+        String A=sc.next();
+
+        if(A.length() <= 50){
+            if (isPalindrome(A) == false){
+                System.out.println("No");
+            } else {
+                System.out.println("Yes");
+            }
+            }
+        }
+
+
+    static public boolean isPalindrome(String text) {
+        String clean = text.replaceAll("\\s+", "").toLowerCase();
+        int length = clean.length();
+        int forward = 0;
+        int backward = length - 1;
+        while (backward > forward) {
+            char forwardChar = clean.charAt(forward++);
+            char backwardChar = clean.charAt(backward--);
+            if (forwardChar != backwardChar)
+                return false;
+        }
+        return true;
+
+    }
+}
+
+
+
