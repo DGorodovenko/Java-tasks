@@ -5,15 +5,14 @@ public class PalindromeWord {
 
     public static void main(String[] args) {
 
+        System.out.println("Input word ");
         Scanner sc=new Scanner(System.in);
         String A=sc.next();
-
-        if(A.length() <= 50){
-            if (isPalindrome(A) == false){
-                System.out.println("No");
-            } else {
-                System.out.println("Yes");
-            }
+        sc.close();
+        
+        if (A.length() <= 50){
+            boolean ret = isPalindrome(A);
+            System.out.println( (ret) ? "Yes" : "No" );
             }
         }
 
